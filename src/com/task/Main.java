@@ -35,19 +35,18 @@ public class Main {
         }
         groupId++;
         /////////////////////////////////////////////////
-        int counter = 0;
         int currentGroup = groupId;
         ////////////////////////////////////////////////
         while(true) {
-            ///////////////////////////////////////////
-            counter++;
-            ///////////////////////////////////////////
             try {
                 line = bufferedReader.readLine();
                 if(line == null) {
                     break;
                 }
                 parts = line.split(";");
+                if(parts.length != 3) {
+                    continue;
+                }
                 boolean status = false;
                 for(String part: parts) {
                     if(part.trim().length() == 0 || part.length() == 2) {
